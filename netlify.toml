@@ -1,0 +1,7 @@
+# Hébergement Netlify. L'adaptateur Next.js est ajouté automatiquement, rien d'autre à configurer.
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+[build.environment]
+  NODE_VERSION = "22"

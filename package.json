@@ -1,0 +1,30 @@
+{
+  "name": "helicaps",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "test": "node --test src/lib/pricing.test.ts && node supabase/schema.test.mjs",
+    "deploy": "npx netlify-cli deploy --prod --context production",
+    "zip": "rm -f helicaps-site.zip && git ls-files -co --exclude-standard | grep -v -e '^docs/' -e '^Guide-' -e '^[.]claude/' -e '[.]zip$' | zip -q helicaps-site.zip -@ && echo helicaps-site.zip"
+  },
+  "dependencies": {
+    "@supabase/ssr": "^0.12.7",
+    "@supabase/supabase-js": "^2.117.3",
+    "next": "^16.4.0",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "stripe": "^23.0.0"
+  },
+  "devDependencies": {
+    "@electric-sql/pglite": "^0.5.9",
+    "@tailwindcss/postcss": "^4.3.3",
+    "@types/node": "^26.6.5",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "tailwindcss": "^4.3.3",
+    "typescript": "^7.0.2"
+  }
+}
